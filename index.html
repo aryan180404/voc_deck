@@ -137,6 +137,20 @@ p,li{font-size:22px;line-height:1.5}
 .msg.alert{border-top:1px solid var(--line);background:#fbf3f2}
 @media (prefers-reduced-motion:no-preference){ html.motion .slide.enter .msg{animation:rise .55s var(--enter) both;animation-delay:calc(var(--m) * 700ms + 500ms)} }
 
+
+/* product judgement slide */
+.pm{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;margin-top:34px;flex:1;min-height:0}
+.pmrows{display:grid;gap:0;border-top:2px solid var(--ink)}
+.pmrows>div{display:grid;grid-template-columns:190px 1fr;gap:22px;padding:15px 0;border-bottom:1px solid var(--line)}
+.pmrows b{font-family:var(--display);font-weight:800;font-size:25px;letter-spacing:-.01em}
+.pmrows p{font-size:17px;line-height:1.45}
+.pmrows em{font-style:normal;font-weight:600;color:var(--teal)}
+.llm{background:var(--ink);color:var(--on-night);border-radius:14px;padding:26px 28px;align-self:start}
+.llm h3{font-size:24px;margin-bottom:14px}
+.llm ul{list-style:none;padding:0;display:grid;gap:12px}
+.llm li{display:grid;grid-template-columns:24px 1fr;gap:10px;font-size:17px;line-height:1.45;color:#d7dcd9}
+.llm li svg{width:20px;height:20px;margin-top:3px;color:var(--amber)}
+
 /* progress and controls */
 .progress{position:absolute;left:0;right:0;bottom:0;height:4px;background:transparent}
 .progress i{display:block;height:100%;background:var(--teal);transform-origin:left;transition:transform .24s var(--ease)}
@@ -231,6 +245,31 @@ p,li{font-size:22px;line-height:1.5}
 <section class="slide night" data-title="The solution">
   <p class="step rv">The solution</p>
   <p class="oneline rv" style="--i:1">Collect every complaint, <em>separate product from operations</em>, rank what matters, and track each fix until the complaints stop.</p>
+</section>
+
+
+<!-- product judgement -->
+<section class="slide" data-title="Product judgement">
+  <p class="step rv">Product judgement first, the model second</p>
+  <h2 class="rv" style="--i:1;max-width:28ch">My product management frameworks decide; the model only reads</h2>
+  <div class="pm">
+    <div class="pmrows rv" style="--i:2">
+      <div><b>Categorise</b><p>Five kinds of feedback, from the types of features and the technical, usability and operational facets of a problem. <em>Feature types, problem facets</em></p></div>
+      <div><b>Identify</b><p>Customers bring solutions; the tool traces them back to the core problem and writes a problem statement, with the root cause as a hypothesis to check. <em>Voice of customer to features</em></p></div>
+      <div><b>Prioritise</b><p>Reach, impact and confidence decide the order. Direct channels count more, and a single strong idea can still rise. <em>RICE, Kano, value against effort</em></p></div>
+      <div><b>Recommend</b><p>At most three short fixes per problem, each with a kind of fix, a Kano need and an owner, and a list of fixes never to suggest. <em>RICE, Kano, MoSCoW</em></p></div>
+    </div>
+    <div class="llm rv" style="--i:3">
+      <h3>The rules the model works within</h3>
+      <ul>
+        <li><svg><use href="#tick"/></svg><span>Picks labels only from a fixed list of problems; it cannot invent categories.</span></li>
+        <li><svg><use href="#tick"/></svg><span>Quotes the customer's own words as evidence for every label; a quote not found in the message is rejected.</span></li>
+        <li><svg><use href="#tick"/></svg><span>Never produces a number: every count, ranking and weight is computed in code.</span></li>
+        <li><svg><use href="#tick"/></svg><span>Answers cite real messages, state root causes as hypotheses, and stay short.</span></li>
+        <li><svg><use href="#tick"/></svg><span>If it fails or is unsure, keyword rules take over, and its accuracy is scored against an answer key.</span></li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 <!-- 4 pipeline -->
